@@ -44,11 +44,13 @@ public class PlayerController : MonoBehaviour
         {
             //transform.position += Vector3.right * speed * Time.deltaTime;
             rigidBody.MovePosition(transform.position + (Vector3.right * speed * Time.deltaTime));
+            transform.rotation = Quaternion.Euler(0, 0, 0);
         }
         if (Input.GetKey(KeyCode.A) || Input.GetKey(KeyCode.LeftArrow))
         {
             // transform.position += Vector3.left * speed * Time.deltaTime;
             rigidBody.MovePosition(transform.position + (Vector3.left * speed * Time.deltaTime));
+            transform.rotation = Quaternion.Euler(0, 180, 0);
         }
         if (Health <= 0)
         {
