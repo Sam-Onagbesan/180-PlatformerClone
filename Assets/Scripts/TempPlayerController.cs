@@ -5,12 +5,13 @@ using UnityEngine;
 public class TempPlayerController : MonoBehaviour
 {
     float speed = 8f;
-    Vector3 dir;
+    public Vector3 dir;
     float jumpForce = 8f;
     private Rigidbody playerRigidbody;
 
 
     void Start(){
+        dir = Vector3.right;
         // gets players rigidbody and saves start position as respawn point
         playerRigidbody = GetComponent<Rigidbody>();
        
