@@ -12,7 +12,7 @@ controlles the movement of the regularBullet once it is created
 
 public class RegularBulletController : MonoBehaviour
 {
-    public GameObject output;
+    public GameObject Player;
     public Quaternion bulletFacing;
     public Vector3 bulletDir;
     public float speed = 5f;
@@ -20,9 +20,11 @@ public class RegularBulletController : MonoBehaviour
 
     void Start()
     {
+        Player = GameObject.Find("TempPlayer");
+
         //get direction of player
         //set bullet to that direction
-        bulletFacing = output.transform.rotation;
+        bulletFacing = Player.transform.rotation;
         gameObject.transform.rotation = bulletFacing;
 
         // sets direction to be strait ahead no matter the rotation at time of spawn in
@@ -42,7 +44,7 @@ public class RegularBulletController : MonoBehaviour
     void OnTriggerEnter(Collider other){
         if(other.tag == "Enemy"){
             // on triggers subtract hp from enemy
-            other.gameObject.GetComponent<EnemyScript>().HP -= 5;
+            // other.gameObject.GetComponent<EnemyScript>().HP -= 5;
         }
         // on trigger hits anything
         // then delete self
