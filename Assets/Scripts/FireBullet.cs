@@ -13,7 +13,7 @@ public class FireBullet : MonoBehaviour
       // if k is pressed instanct object 
       if ((Input.GetKey("k")) && canShoot){
             Instantiate(regularBullet, transform.position, transform.rotation);
-            timer = 0.3f;
+            timer = 0.15f;
             canShoot = false;
         }  
 
