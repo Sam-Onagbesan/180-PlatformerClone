@@ -14,6 +14,7 @@ public class RegularBulletController : MonoBehaviour
 {
     public GameObject Player;
     public Vector3 bulletDir;
+    public Vector3 PlayerDir;
     public float speed = 5f;
 
 
@@ -24,9 +25,10 @@ public class RegularBulletController : MonoBehaviour
         //finds Player (needs to be changed once we make reall player)
         Player = GameObject.Find("TempPlayer");
         // gets bullet direction by getting direction player is facing/last went 
-        bulletDir = Player.GetComponent<TempPlayerController>().dir;
-        if(bulletDir == Vector3.up){
-            bulletDir = Vector3.right;
+        PlayerDir = Player.GetComponent<TempPlayerController>().dirFacing;
+        
+        if(PlayerDir == Vector3.right || PlayerDir == Vector3.left){
+            bulletDir = PlayerDir;
         }
     }
 
@@ -45,6 +47,9 @@ public class RegularBulletController : MonoBehaviour
             return;
         }
         if(other.tag == "Enemy"){
+            //if regularBullet do 1HP
+            //if FanceBullet do 3HP
+
             // on triggers subtract hp from enemy
             // other.gameObject.GetComponent<EnemyScript>().HP -= 5;
         }
