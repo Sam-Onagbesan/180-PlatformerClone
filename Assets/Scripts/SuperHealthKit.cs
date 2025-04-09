@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class JumpBoostPickUp : MonoBehaviour
+public class SuperHealthKit : MonoBehaviour
 {
     void Update(){
         transform.Rotate(0.0f, 0.25f, 0.0f, Space.Self);
@@ -10,8 +10,7 @@ public class JumpBoostPickUp : MonoBehaviour
 
     void OnTriggerEnter(Collider other){
         if(other.gameObject.tag == "Player"){
-            other.gameObject.GetComponent<TempPlayerController>().HasJumpBoost = true;
-            other.gameObject.GetComponent<TempPlayerController>().jumpTimer = 5f;
+            other.gameObject.GetComponent<TempPlayerController>().playerHealth = 200;
             gameObject.SetActive(false);
         }
     }

@@ -12,6 +12,8 @@ public class TempPlayerController : MonoBehaviour
     public bool HasHeavyBullet = false;
     public bool HasJumpBoost = false;
     public float jumpForceMultiplyer = 1f;
+    public float jumpTimer;
+    public int playerHealth = 100;
 
 
     void Start(){
@@ -69,7 +71,6 @@ public class TempPlayerController : MonoBehaviour
 
     void JumpBoost(){
         jumpForceMultiplyer = 1.5f;
-        float jumpTimer = 5f;
         if(jumpTimer > 0){
             jumpTimer -= Time.deltaTime;
         }else{
