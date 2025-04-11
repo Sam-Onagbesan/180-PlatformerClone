@@ -2,6 +2,16 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+/*
+Piper Johnson
+4/7/2025
+
+if k is pressed it fires bullet can fire every 0.15 seconds
+if player has heavyBullet player will fire else it will fire normal bullets
+each time fired it restarts the timer for 15 secconds and canot fire until timer is complete
+
+*/
+
 public class FireBullet : MonoBehaviour
 {
     public GameObject regularBullet;

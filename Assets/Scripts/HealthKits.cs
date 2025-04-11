@@ -2,6 +2,16 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+/*
+Piper Johnson
+4/10/2025
+
+Causes the cube to rotate
+when the player hits the object player health is increased by AmountOfHealth
+then object is not setactive 
+
+*/
+
 public class HealthKits : MonoBehaviour
 {
     public int AmountOfHealth;
