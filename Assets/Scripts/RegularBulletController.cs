@@ -44,18 +44,22 @@ public class RegularBulletController : MonoBehaviour
 
     void OnTriggerEnter(Collider other){
         if(other.tag == "Player"){
-            return;
+         return;  
         }
-        if(other.tag == "Enemy"){
+
+
+            if(other.tag == "Enemy"){
             //if regularBullet do 1HP
-            //if FanceBullet do 3HP
+            //if heavyBullet do 3HP
 
             // on triggers subtract hp from enemy
             // other.gameObject.GetComponent<EnemyScript>().HP -= 5;
-        }
-        // on trigger hits anything
-        // then delete self
-        Destroy(gameObject);
+            }
+            // on trigger hits anything
+            // then delete self
+            print("hits object");
+            Destroy(gameObject);
+        
     }
      
 

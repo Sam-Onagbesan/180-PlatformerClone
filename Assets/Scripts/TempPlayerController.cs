@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class TempPlayerController : MonoBehaviour
 {
-    float speed = 8f;
+    public float speed = 8f;
     public Vector3 dir;
     public Vector3 dirFacing;
     public float jumpForce = 5f;
@@ -25,6 +25,8 @@ public class TempPlayerController : MonoBehaviour
 
     void Update()
     {
+        transform.rotation = Quaternion.Euler(0,0,0);
+
         if(HasJumpBoost){
             JumpBoost();
         }
