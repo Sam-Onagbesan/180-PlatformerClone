@@ -19,10 +19,11 @@ public class FireBullet : MonoBehaviour
     public float timer;
     public bool canShoot = true;
     bool HasHeavyBullet;
+    public Vector3 dirFacing;
 
     void Update()
     {
-       HasHeavyBullet = gameObject.GetComponent<TempPlayerController>().HasHeavyBullet;
+       HasHeavyBullet = gameObject.GetComponent<PlayerController>().HasHeavyBullet;
       // if k is pressed instanct object 
       if ((Input.GetKey("k")) && canShoot){
         if(HasHeavyBullet){
@@ -33,6 +34,7 @@ public class FireBullet : MonoBehaviour
             timer = 0.15f;
             canShoot = false;
         }  
+
 
         if (timer >= 0f){
             timer -= Time.deltaTime;

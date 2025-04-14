@@ -25,7 +25,7 @@ public class RegularBulletController : MonoBehaviour
         //finds Player (needs to be changed once we make reall player)
         Player = GameObject.Find("TempPlayer");
         // gets bullet direction by getting direction player is facing/last went 
-        PlayerDir = Player.GetComponent<TempPlayerController>().dirFacing;
+        PlayerDir = Player.GetComponent<PlayerController>().dirFacing;
         
         if(PlayerDir == Vector3.right || PlayerDir == Vector3.left){
             bulletDir = PlayerDir;
