@@ -23,12 +23,14 @@ public class RegularBulletController : MonoBehaviour
         // sets rotation to be 90 degrees
         gameObject.transform.rotation = Quaternion.Euler(0,0,90f);
         //finds Player (needs to be changed once we make reall player)
-        Player = GameObject.Find("TempPlayer");
+        Player = GameObject.Find("Player");
         // gets bullet direction by getting direction player is facing/last went 
-        PlayerDir = Player.GetComponent<PlayerController>().dirFacing;
+        bool facingRight = Player.GetComponent<PlayerController>().facingRight;
         
-        if(PlayerDir == Vector3.right || PlayerDir == Vector3.left){
-            bulletDir = PlayerDir;
+        if(facingRight){
+            bulletDir = Vector3.right;
+        }else if (!facingRight){
+            bulletDir = Vector3.left;
         }
     }
 
@@ -46,8 +48,6 @@ public class RegularBulletController : MonoBehaviour
         if(other.tag == "Player"){
          return;  
         }
-
-
             if(other.tag == "Enemy"){
             //if regularBullet do 1HP
             //if heavyBullet do 3HP

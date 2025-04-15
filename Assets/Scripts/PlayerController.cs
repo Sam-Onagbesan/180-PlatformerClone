@@ -19,8 +19,6 @@ public class PlayerController : MonoBehaviour
     public GameObject Spawner;
     public bool facingRight;
     public bool HasHeavyBullet = false;
-  
-    public Vector3 dirFacing;
 
 
     // Start is called before the first frame update
@@ -32,12 +30,6 @@ public class PlayerController : MonoBehaviour
        
     }
 
-
-    private void Update()
-    {
-        dirFacing = Vector3.forward;
-    }
-    
     private void FixedUpdate()
     {
         PlayerMove();

@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 2426125508596840851}
   m_Layer: 0
   m_Name: r (1)
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -121,7 +121,7 @@ GameObject:
   - component: {fileID: 3341444729064995851}
   m_Layer: 0
   m_Name: Capsule
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -228,7 +228,7 @@ GameObject:
   - component: {fileID: 1523395004635624735}
   m_Layer: 0
   m_Name: Cylinder
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -335,7 +335,7 @@ GameObject:
   - component: {fileID: 1166205843337773476}
   m_Layer: 0
   m_Name: Sphere (1)
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -440,7 +440,7 @@ GameObject:
   - component: {fileID: 5854426255826624890}
   m_Layer: 0
   m_Name: re
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -548,7 +548,6 @@ GameObject:
   - component: {fileID: 495815906941719594}
   - component: {fileID: 2151115803754660241}
   - component: {fileID: 2595612344723339650}
-  - component: {fileID: 3039077011570781869}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -711,22 +710,6 @@ MonoBehaviour:
   timer: 0
   canShoot: 1
   dirFacing: {x: 0, y: 0, z: 0}
---- !u!114 &3039077011570781869
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3704533345291123391}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8463bfb71af654d6ea032e4545ff04f9, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  Player: {fileID: 0}
-  bulletDir: {x: 0, y: 0, z: 0}
-  PlayerDir: {x: 0, y: 0, z: 0}
-  speed: 5
 --- !u!1 &4074869124477267739
 GameObject:
   m_ObjectHideFlags: 0
@@ -738,7 +721,7 @@ GameObject:
   - component: {fileID: 4867891772739348764}
   m_Layer: 0
   m_Name: Model
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -784,7 +767,7 @@ GameObject:
   - component: {fileID: 5022856987583432859}
   m_Layer: 0
   m_Name: Capsule
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -891,7 +874,7 @@ GameObject:
   - component: {fileID: 5865613348001068486}
   m_Layer: 0
   m_Name: r
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -998,7 +981,7 @@ GameObject:
   - component: {fileID: 2731401836268166396}
   m_Layer: 0
   m_Name: r
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1105,7 +1088,7 @@ GameObject:
   - component: {fileID: 5650449610575294272}
   m_Layer: 0
   m_Name: r (2)
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1212,7 +1195,7 @@ GameObject:
   - component: {fileID: 3978660952097663377}
   m_Layer: 0
   m_Name: Sphere
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1317,7 +1300,7 @@ GameObject:
   - component: {fileID: 1269725717602961919}
   m_Layer: 0
   m_Name: Capsule (1)
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1424,7 +1407,7 @@ GameObject:
   - component: {fileID: 3070042714498153022}
   m_Layer: 0
   m_Name: hand
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
