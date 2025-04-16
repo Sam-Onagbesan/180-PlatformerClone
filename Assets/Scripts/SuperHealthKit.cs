@@ -14,13 +14,15 @@ then object is not setactive
 
 public class SuperHealthKit : MonoBehaviour
 {
+    public GameObject Player;
+
     void Update(){
         transform.Rotate(0.0f, 0.25f, 0.0f, Space.Self);
     }
 
     void OnTriggerEnter(Collider other){
         if(other.gameObject.tag == "Player"){
-            other.gameObject.GetComponent<TempPlayerController>().playerHealth = 200;
+            Player.GetComponent<PlayerController>().Health = 200;
             gameObject.SetActive(false);
         }
     }

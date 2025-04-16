@@ -15,6 +15,7 @@ then object is not setactive
 public class HealthKits : MonoBehaviour
 {
     public int AmountOfHealth;
+    public GameObject Player;
 
     void Update(){
         transform.Rotate(0.0f, 0.25f, 0.0f, Space.Self);
@@ -22,7 +23,7 @@ public class HealthKits : MonoBehaviour
 
     void OnTriggerEnter(Collider other){
         if(other.gameObject.tag == "Player"){
-            other.gameObject.GetComponent<TempPlayerController>().playerHealth += AmountOfHealth;
+            Player.GetComponent<PlayerController>().Health += AmountOfHealth;
             gameObject.SetActive(false);
         }
     }

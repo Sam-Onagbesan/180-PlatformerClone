@@ -12,11 +12,21 @@ public class PlayerTxtController : MonoBehaviour
     public TMP_Text t;
     public GameObject Player;
     int health;
+    int lives;
 
     // Update is called once per frame
     void Update()
     {
-        health = Player.GetComponent<TempPlayerController>().playerHealth;
-        t.text = "Health: " + health.ToString();
+        health = Player.GetComponent<PlayerController>().Health;
+        lives = Player.GetComponent<PlayerController>().Lives;
+        t.text = "Health: " + health.ToString() + Environment.NewLine() + "Lives: " + lives.ToString();
+        CheckGameOver();
+    }
+    
+    void CheckGameOver(){
+        if (lives <= 0){
+            GameOverScreen.SetActive(true);
+            GamePlayScreen.SetActive(false);
+        }
     }
 }

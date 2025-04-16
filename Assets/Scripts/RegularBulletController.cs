@@ -24,9 +24,11 @@ public class RegularBulletController : MonoBehaviour
         gameObject.transform.rotation = Quaternion.Euler(0,0,90f);
         //finds Player (needs to be changed once we make reall player)
         Player = GameObject.Find("Player");
-        // gets bullet direction by getting direction player is facing/last went 
+        // gets bullet direction by checking if player is facing right
         bool facingRight = Player.GetComponent<PlayerController>().facingRight;
         
+        // if player is facing right sets bullets to move right 
+        // if player facing left sets bullets to move left
         if(facingRight){
             bulletDir = Vector3.right;
         }else if (!facingRight){
@@ -48,17 +50,17 @@ public class RegularBulletController : MonoBehaviour
         if(other.tag == "Player"){
          return;  
         }
-            if(other.tag == "Enemy"){
+        if(other.tag == "Enemy"){
             //if regularBullet do 1HP
             //if heavyBullet do 3HP
 
             // on triggers subtract hp from enemy
             // other.gameObject.GetComponent<EnemyScript>().HP -= 5;
-            }
-            // on trigger hits anything
-            // then delete self
-            print("hits object");
-            Destroy(gameObject);
+        }
+        // on trigger hits anything
+        // then delete self
+        // print("hits object");
+        Destroy(gameObject);
         
     }
      
