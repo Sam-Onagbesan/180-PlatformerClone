@@ -13,13 +13,15 @@ public class PlayerTxtController : MonoBehaviour
     public GameObject Player;
     int health;
     int lives;
+    public GameObject GameOverScreen;
+    public GameObject GamePlayScreen;
 
     // Update is called once per frame
     void Update()
     {
         health = Player.GetComponent<PlayerController>().Health;
         lives = Player.GetComponent<PlayerController>().Lives;
-        t.text = "Health: " + health.ToString() + Environment.NewLine() + "Lives: " + lives.ToString();
+        t.text = "Health: " + health.ToString() + Environment.NewLine + "Lives: " + lives.ToString();
         CheckGameOver();
     }
     

@@ -1,17 +1,20 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
+using UnityEngine.UI;
+
 
 public class PlayAgainButton : MonoBehaviour
 {
-    public Button PlayAgainButton;
+    public Button PlayButton;
     public GameObject GamePlayScreen;
     public GameObject GameOverScreen;
     public GameObject Player;
 
     void Start(){
         //listens for button to be clicked
-        PlayAgainButton.onClick.AddListener(Clicked);
+        PlayButton.onClick.AddListener(Clicked);
     }
  
     void Clicked(){

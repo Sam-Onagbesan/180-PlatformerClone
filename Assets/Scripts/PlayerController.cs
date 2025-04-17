@@ -97,17 +97,9 @@ public class PlayerController : MonoBehaviour
     }
     public void LoseLife()
     {
-        if (Lives <= 1)
-        {
-            SceneManager.LoadScene(1);
-
-        }
-        else
-        {
-            Lives--;
-            Health = 100;
-            transform.position = Spawner.transform.position;
-        }
+        Lives--;
+        Health = 100;
+        transform.position = Spawner.transform.position;
     }
 
     void JumpBoost(){
