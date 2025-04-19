@@ -5,6 +5,7 @@ TagManager:
   serializedVersion: 2
   tags:
   - HeavyBulletPickUp
+  - Enemy
   layers:
   - Default
   - TransparentFX

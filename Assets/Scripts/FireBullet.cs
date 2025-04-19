@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using JetBrains.Annotations;
 using UnityEngine;
 
 /*
@@ -18,7 +19,7 @@ public class FireBullet : MonoBehaviour
     public GameObject heavyBullet;
     public float timer;
     public bool canShoot;
-    bool HasHeavyBullet;
+    public bool HasHeavyBullet;
     public Vector3 dirFacing;
     public Vector3 shootAhead = new Vector3(1, 0, 0);
     public Vector3 shootBack = new Vector3(1, 0, 0);
@@ -27,38 +28,66 @@ public class FireBullet : MonoBehaviour
     void Update()
 
     {
-        
-       HasHeavyBullet = gameObject.GetComponent<PlayerController>().HasHeavyBullet;
-      // if k is pressed instanct object 
-      if ((Input.GetKey("k")) && canShoot){
-        if(HasHeavyBullet){
-                print("fired Heavy");
-                Instantiate(heavyBullet, transform.position + new Vector3(1f,0,0), Quaternion.identity);
-            }
 
-        }
-        
-                if(dirFacing == Vector3.forward)
+        HasHeavyBullet = gameObject.GetComponent<PlayerController>().HasHeavyBullet;
+        // if k is pressed instanct object 
+        if ((Input.GetKey("k")) && canShoot)
+        {
+            if (HasHeavyBullet)
+            {
+
+                if (dirFacing == Vector3.forward)
                 {
-                    Instantiate(regularBullet, transform.position + new Vector3(1f, 0, 0), Quaternion.identity);
-                print("fired Regular");
+                    Instantiate(heavyBullet, transform.position + transform.right, Quaternion.identity);
+                    print("fired Heavy");
+                    StartCoroutine(WaitToShoot());
                 }
                 else
                 {
-                    Instantiate(regularBullet, transform.position + new Vector3(1f, 0, 0), Quaternion.identity);
-                print("fired Regular");
+                    Instantiate(heavyBullet, transform.position + transform.right, Quaternion.identity);
+                    print("fired Heavy");
+                    StartCoroutine(WaitToShoot());
                 }
-                    
-        }
-            timer = 0.15f;
-            canShoot = false;
-        
+
+            }
 
 
-        if (timer >= 0f){
-            timer -= Time.deltaTime;
-        }else{
-            canShoot = true;
+            else
+            if (dirFacing == Vector3.forward)
+            {
+                Instantiate(regularBullet, transform.position + transform.right, Quaternion.identity);
+                print("fired Regular");
+                StartCoroutine(WaitToShoot());
+            }
+            else
+            {
+                Instantiate(regularBullet, transform.position + transform.right, Quaternion.identity);
+                print("fired Regular");
+                StartCoroutine(WaitToShoot());
+            }
+            
+           
+
+
+
+           
+            
+
         }
+       
+    }
+    public IEnumerator WaitToShoot()
+    {
+        canShoot = false;
+        yield return new WaitForSeconds(0.5f);
+        canShoot = true;
     }
 }
+
+
+   
+          
+        
+    
+
+

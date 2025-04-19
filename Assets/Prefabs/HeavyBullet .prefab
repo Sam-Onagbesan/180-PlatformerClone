@@ -121,10 +121,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8463bfb71af654d6ea032e4545ff04f9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Player: {fileID: 0}
+  Player: {fileID: 3704533345291123391, guid: 43316614836d3e14bb2601eeed5f37f6, type: 3}
   bulletDir: {x: 0, y: 0, z: 0}
   PlayerDir: {x: 0, y: 0, z: 0}
   speed: 15
+  damage: 30
 --- !u!54 &3517506778551024982
 Rigidbody:
   m_ObjectHideFlags: 0

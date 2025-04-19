@@ -22,6 +22,7 @@ public class PlayerController : MonoBehaviour
     public bool HasJumpBoost = false;
     public float jumpForceMultiplyer = 1f;
     public float jumpTimer;
+    public bool HasHeavyBullet;
 
 
     // Start is called before the first frame update
@@ -30,6 +31,7 @@ public class PlayerController : MonoBehaviour
         transform.position = Spawner.transform.position;
         rigidBody = GetComponent<Rigidbody>();
         Health = MaxHealth;
+        facingRight = true;
        
     }
 
@@ -39,6 +41,11 @@ public class PlayerController : MonoBehaviour
             JumpBoost();
         }
         if(transform.position.y <= -10){
+            LoseLife();
+        }
+
+        if(Health <= 0)
+        {
             LoseLife();
         }
         PlayerMove();
@@ -64,10 +71,7 @@ public class PlayerController : MonoBehaviour
             // rigidBody.MovePosition(transform.position + (Vector3.left * speed * Time.deltaTime));
             transform.rotation = Quaternion.Euler(0, 180, 0);
         }
-        if (Health <= 0)
-        {
-            LoseLife();
-        }
+        
 
 
     }
@@ -111,5 +115,12 @@ public class PlayerController : MonoBehaviour
             jumpForceMultiplyer = 1f;
         }
     }
-   
+    private void Update()
+    {
+        print(Health);
+        if (Health <= 0)
+        {
+            LoseLife();
+        }
+    }
 }

@@ -4,7 +4,7 @@ using UnityEngine;
 
 /*
 Piper Johnson
-4/10/2025
+4/19/2025
 
 Causes the cube to rotate
 when the player hits the object player HasHeavyBullet is true allowing player to shoot the heavy bullets
@@ -22,9 +22,15 @@ public class HeavyBulletPickUp : MonoBehaviour
 
     void OnTriggerEnter(Collider other){
         if(other.gameObject.tag == "Player"){
-            Player.GetComponent<FireBullet>().HasHeavyBullet = true;
+            Player.GetComponent<PlayerController>().HasHeavyBullet = true;
             gameObject.SetActive(false);
+            Destroy(gameObject);
             // Destroy(gameObject);
         }
+       
+    }
+    private void Start()
+    {
+        Player = GameObject.Find("Player");
     }
 }

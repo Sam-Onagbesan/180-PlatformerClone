@@ -16,6 +16,7 @@ public class RegularBulletController : MonoBehaviour
     public Vector3 bulletDir;
     public Vector3 PlayerDir;
     public float speed = 5f;
+    public int damage = 10;
 
 
     void Start()
@@ -34,6 +35,7 @@ public class RegularBulletController : MonoBehaviour
         }else if (!facingRight){
             bulletDir = Vector3.left;
         }
+
     }
 
     void Update()
@@ -50,18 +52,9 @@ public class RegularBulletController : MonoBehaviour
         if(other.tag == "Player"){
          return;  
         }
-        if(other.tag == "Enemy"){
-            //if regularBullet do 1HP
-            //if heavyBullet do 3HP
 
-            // on triggers subtract hp from enemy
-            // other.gameObject.GetComponent<EnemyScript>().HP -= 5;
-        }
-        // on trigger hits anything
-        // then delete self
-        // print("hits object");
         Destroy(gameObject);
-        
+
     }
      
 
