@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.44657826, g: 0.49641263, b: 0.57481676, a: 1}
+  m_IndirectSpecularColor: {r: 0.44657815, g: 0.49641192, b: 0.5748165, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -2086,9 +2086,21 @@ PrefabInstance:
     m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: 495815906941719594, guid: 43316614836d3e14bb2601eeed5f37f6, type: 3}
+      propertyPath: speed
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 495815906941719594, guid: 43316614836d3e14bb2601eeed5f37f6, type: 3}
       propertyPath: Spawner
       value: 
       objectReference: {fileID: 148297171}
+    - target: {fileID: 495815906941719594, guid: 43316614836d3e14bb2601eeed5f37f6, type: 3}
+      propertyPath: jumpForce
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 2151115803754660241, guid: 43316614836d3e14bb2601eeed5f37f6, type: 3}
+      propertyPath: m_Mass
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 3704533345291123391, guid: 43316614836d3e14bb2601eeed5f37f6, type: 3}
       propertyPath: m_Name
       value: Player

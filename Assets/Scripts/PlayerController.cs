@@ -18,9 +18,10 @@ public class PlayerController : MonoBehaviour
     public int Lives = 3;
     public GameObject Spawner;
     public bool facingRight;
-    public bool HasHeavyBullet = false;
-  
-    public Vector3 dirFacing;
+
+    public bool HasJumpBoost = false;
+    public float jumpForceMultiplyer = 1f;
+    public float jumpTimer;
 
 
     // Start is called before the first frame update
@@ -32,16 +33,17 @@ public class PlayerController : MonoBehaviour
        
     }
 
-
-    private void Update()
-    {
-        dirFacing = Vector3.forward;
-    }
-    
     private void FixedUpdate()
     {
+        if(HasJumpBoost){
+            JumpBoost();
+        }
+        if(transform.position.y <= -10){
+            LoseLife();
+        }
         PlayerMove();
         Jump();
+        transform.position = new Vector3(transform.position.x, transform.position.y, 0f);
     }
 
 
@@ -51,15 +53,15 @@ public class PlayerController : MonoBehaviour
         if (Input.GetKey(KeyCode.D) || Input.GetKey(KeyCode.RightArrow))
         {
             facingRight = true;
-            //transform.position += Vector3.right * speed * Time.deltaTime;
-            rigidBody.MovePosition(transform.position + (Vector3.right * speed * Time.deltaTime));
+            transform.position += Vector3.right * speed * Time.deltaTime;
+            // rigidBody.MovePosition(transform.position + (Vector3.right * speed * Time.deltaTime));
             transform.rotation = Quaternion.Euler(0, 0, 0);
         }
         if (Input.GetKey(KeyCode.A) || Input.GetKey(KeyCode.LeftArrow))
         {
             facingRight = false;
-            // transform.position += Vector3.left * speed * Time.deltaTime;
-            rigidBody.MovePosition(transform.position + (Vector3.left * speed * Time.deltaTime));
+            transform.position += Vector3.left * speed * Time.deltaTime;
+            // rigidBody.MovePosition(transform.position + (Vector3.left * speed * Time.deltaTime));
             transform.rotation = Quaternion.Euler(0, 180, 0);
         }
         if (Health <= 0)
@@ -74,8 +76,7 @@ public class PlayerController : MonoBehaviour
 
         if (Input.GetKey(KeyCode.Space) && OnGround())
         {
-          
-            rigidBody.AddForce(Vector3.up * jumpForce, ForceMode.Impulse);
+            rigidBody.AddForce(Vector3.up * (jumpForce * jumpForceMultiplyer), ForceMode.Impulse);
 
         }
 
@@ -96,16 +97,18 @@ public class PlayerController : MonoBehaviour
     }
     public void LoseLife()
     {
-        if (Lives <= 1)
-        {
-            SceneManager.LoadScene(1);
+        Lives--;
+        Health = 100;
+        transform.position = Spawner.transform.position;
+    }
 
-        }
-        else
-        {
-            Lives--;
-            Health = 100;
-            transform.position = Spawner.transform.position;
+    void JumpBoost(){
+        jumpForceMultiplyer = 3f;
+        if(jumpTimer > 0){
+            jumpTimer -= Time.deltaTime;
+        }else{
+            HasJumpBoost = false;
+            jumpForceMultiplyer = 1f;
         }
     }
    

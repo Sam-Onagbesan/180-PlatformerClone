@@ -15,14 +15,16 @@ then object is not setactive
 
 public class JumpBoostPickUp : MonoBehaviour
 {
+    public GameObject Player;
+
     void Update(){
         transform.Rotate(0.0f, 0.25f, 0.0f, Space.Self);
     }
 
     void OnTriggerEnter(Collider other){
         if(other.gameObject.tag == "Player"){
-            other.gameObject.GetComponent<TempPlayerController>().HasJumpBoost = true;
-            other.gameObject.GetComponent<TempPlayerController>().jumpTimer = 5f;
+            Player.GetComponent<PlayerController>().HasJumpBoost = true;
+            Player.GetComponent<PlayerController>().jumpTimer = 5f;
             gameObject.SetActive(false);
         }
     }
