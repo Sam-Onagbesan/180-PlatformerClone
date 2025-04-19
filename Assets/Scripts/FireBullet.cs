@@ -18,17 +18,16 @@ public class FireBullet : MonoBehaviour
     public GameObject heavyBullet;
     public float timer;
     public bool canShoot;
-    bool HasHeavyBullet;
+    public bool HasHeavyBullet;
     public Vector3 dirFacing;
-    public Vector3 shootAhead = new Vector3(1, 0, 0);
-    public Vector3 shootBack = new Vector3(1, 0, 0);
+    // public Vector3 shootAhead = new Vector3(1, 0, 0);
+    // public Vector3 shootBack = new Vector3(1, 0, 0);
 
 
     void Update()
 
     {
-        
-       HasHeavyBullet = gameObject.GetComponent<PlayerController>().HasHeavyBullet;
+
       // if k is pressed instanct object 
       if ((Input.GetKey("k")) && canShoot){
         if(HasHeavyBullet){
@@ -49,7 +48,7 @@ public class FireBullet : MonoBehaviour
                 print("fired Regular");
                 }
                     
-        }
+    
             timer = 0.15f;
             canShoot = false;
         
@@ -62,3 +61,4 @@ public class FireBullet : MonoBehaviour
         }
     }
 }
+
