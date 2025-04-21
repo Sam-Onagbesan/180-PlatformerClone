@@ -11,7 +11,7 @@ public class EndGamePortal : MonoBehaviour
     void OnCollisionEnter(Collision collision){
         if(collision.gameObject.tag == "Player"){
             SceneManager.LoadScene("MenuScene");
-            SceneManager.UnloadScene("MainLevel");
+            SceneManager.UnloadSceneAsync("MainLevel");
         }
      }
 }
