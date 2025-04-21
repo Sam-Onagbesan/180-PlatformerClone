@@ -125,6 +125,7 @@ MonoBehaviour:
   bulletDir: {x: 0, y: 0, z: 0}
   PlayerDir: {x: 0, y: 0, z: 0}
   speed: 15
+  damage: 10
 --- !u!54 &-6074441853310275555
 Rigidbody:
   m_ObjectHideFlags: 0

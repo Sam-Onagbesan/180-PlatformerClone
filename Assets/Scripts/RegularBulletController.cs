@@ -52,7 +52,6 @@ public class RegularBulletController : MonoBehaviour
         if(other.tag == "Player"){
          return;  
         }
-
         Destroy(gameObject);
 
     }

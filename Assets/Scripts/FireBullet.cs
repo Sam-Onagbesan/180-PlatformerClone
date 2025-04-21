@@ -4,12 +4,12 @@ using JetBrains.Annotations;
 using UnityEngine;
 
 /*
-Piper Johnson
+Piper Johnson and Samuel Onagbesan
 4/7/2025
 
-if k is pressed it fires bullet can fire every 0.15 seconds
+if k is pressed it fires bullet can fire every 0.5 seconds
 if player has heavyBullet player will fire else it will fire normal bullets
-each time fired it restarts the timer for 15 secconds and canot fire until timer is complete
+each time fired it restarts the timer for 5 secconds and canot fire until timer is complete
 
 */
 
@@ -28,13 +28,14 @@ public class FireBullet : MonoBehaviour
     void Update()
 
     {
-
+        //gets bool hasHeavyBullet from player controller
         HasHeavyBullet = gameObject.GetComponent<PlayerController>().HasHeavyBullet;
         // if k is pressed instanct object 
         if ((Input.GetKey("k")) && canShoot)
         {
             if (HasHeavyBullet)
             {
+                // if hasHeavyBullet and direction facing is forward fires shot and starts Corotine
 
                 if (dirFacing == Vector3.forward)
                 {
@@ -52,8 +53,8 @@ public class FireBullet : MonoBehaviour
             }
 
 
-            else
-            if (dirFacing == Vector3.forward)
+            else if (dirFacing == Vector3.forward)
+            // if no heavybullets and direction facing is forward fires shot and starts Corotine
             {
                 Instantiate(regularBullet, transform.position + transform.right, Quaternion.identity);
                 print("fired Regular");
@@ -65,13 +66,6 @@ public class FireBullet : MonoBehaviour
                 print("fired Regular");
                 StartCoroutine(WaitToShoot());
             }
-            
-           
-
-
-
-           
-            
 
         }
        
